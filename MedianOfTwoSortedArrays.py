@@ -7,9 +7,9 @@ class Solution:
         nums1.sort()
         size = len(nums1)
         if size % 2 != 0:
-            medianindex= (size / 2) - 0.5
-            return nums1[int(medianindex)]
+            median_index= (size / 2) - 0.5
+            return nums1[int(median_index)]
         else:
-            medianindex1 = (size / 2)
-            medianindex2 = (medianindex1 - 1)
-            return (nums1[int(medianindex1)] + nums1[int(medianindex2)]) / 2
+            median_index1 = (size / 2)
+            median_index2 = (median_index1 - 1)
+            return (nums1[int(median_index1)] + nums1[int(median_index2)]) / 2
