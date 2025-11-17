@@ -1,15 +1,34 @@
-
-
 from typing import List
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        nums1.extend(nums2)
-        nums1.sort()
-        size = len(nums1)
-        if size % 2 != 0:
-            median_index= (size / 2) - 0.5
-            return nums1[int(median_index)]
+    def findMedianSortedArrays(
+        self, nums1: List[int], nums2: List[int]
+    ) -> float:
+        m, n = len(nums1), len(nums2)
+        p1, p2 = 0, 0
+
+        # Get the smaller value between nums1[p1] and nums2[p2].
+        def get_min():
+            nonlocal p1, p2
+            if p1 < m and p2 < n:
+                if nums1[p1] < nums2[p2]:
+                    ans = nums1[p1]
+                    p1 += 1
+                else:
+                    ans = nums2[p2]
+                    p2 += 1
+            elif p2 == n:
+                ans = nums1[p1]
+                p1 += 1
+            else:
+                ans = nums2[p2]
+                p2 += 1
+            return ans
+
+        if (m + n) % 2 == 0:
+            for _ in range((m + n) // 2 - 1):
+                _ = get_min()
+            return (get_min() + get_min()) / 2
         else:
-            median_index1 = (size / 2)
-            median_index2 = (median_index1 - 1)
-            return (nums1[int(median_index1)] + nums1[int(median_index2)]) / 2
+            for _ in range((m + n) // 2):
+                _ = get_min()
+            return get_min()
