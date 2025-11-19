@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def findMedianSortedArrays(self, A: List[int], B: List[int]) -> float:
         na, nb = len(A), len(B)
