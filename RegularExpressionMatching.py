@@ -1,3 +1,4 @@
+# The runtime complexity of this solution is O(TP) with T being the length of the text and P being the pattern
 class Solution(object):
     def isMatch(self, text: str, pattern: str) -> bool:
         dp = [[False] * (len(pattern) + 1) for _ in range(len(text) + 1)]
