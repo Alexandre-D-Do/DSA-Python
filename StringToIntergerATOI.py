@@ -1,3 +1,4 @@
+# The time complexity of this solution is O(N)
 class Solution:
     def myAtoi(self, input: str) -> int:
         sign = 1
