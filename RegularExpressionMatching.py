@@ -1,8 +1,8 @@
+
 # The runtime complexity of this solution is O(TP) with T being the length of the text and P being the pattern
 class Solution(object):
     def isMatch(self, text: str, pattern: str) -> bool:
         dp = [[False] * (len(pattern) + 1) for _ in range(len(text) + 1)]
-
         dp[-1][-1] = True
         for i in range(len(text), -1, -1):
             for j in range(len(pattern) - 1, -1, -1):
@@ -11,7 +11,6 @@ class Solution(object):
                     dp[i][j] = dp[i][j + 2] or first_match and dp[i + 1][j]
                 else:
                     dp[i][j] = first_match and dp[i + 1][j + 1]
-
         return dp[0][0]
         
 '''
