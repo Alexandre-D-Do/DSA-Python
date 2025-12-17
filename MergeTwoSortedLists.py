@@ -47,7 +47,7 @@ class Solution:
                 merged_list_head.next = l2_head
                 merged_list_head = merged_list_head.next
                 l2_head = l2_head.next
-        
+                
         return return_node
            
 '''
