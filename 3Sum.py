@@ -1,3 +1,4 @@
+#The time complexity of this solution is O(N^2)
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
