@@ -1,3 +1,4 @@
+# The time complexity of this algorithm is O(n).
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         size = len(nums)
